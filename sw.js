@@ -1,7 +1,8 @@
-const CACHE_NAME = 'physiclab-electrolysis-v2';
+const CACHE_NAME = 'physiclab-electrolysis-v3';
 const ASSETS = [
-  './index.html',
-  './manifest.json'
+  '/Electrolysis/',
+  '/Electrolysis/index.html',
+  '/Electrolysis/manifest.json'
 ];
 
 self.addEventListener('install', e => {
