@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#4a90e2">
+    <link rel="apple-touch-icon" href="data:image/png;base64,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">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محاكاة التحليل الكهربائي</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+            background: linear-gradient(to bottom, #4a90e2, #9b59b6);
+            min-height: 100vh;
+            padding: 14px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            padding: 18px 20px 14px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        h1 { text-align:center; color:#2c3e50; font-size:clamp(1.1rem,3vw,1.7rem); margin-bottom:4px; }
+        .subtitle { text-align:center; color:#7f8c8d; font-size:clamp(0.8rem,2vw,1rem); margin-bottom:12px; }
+
+        /* ── TABS ── */
+        .tabs {
+            display:flex; flex-direction:column; gap:4px;
+            margin-bottom:14px;
+        }
+        .tab-btn {
+            padding:11px 16px; font-size:14px; font-weight:bold; border:none;
+            border-radius:10px; cursor:pointer; color:white; width:100%;
+            background:#95a5a6; transition:background 0.2s, box-shadow 0.2s;
+            text-align:center; touch-action:manipulation;
+            box-shadow:0 2px 6px rgba(0,0,0,0.15);
+        }
+        .tab-btn.active-tab  { background:#4a90e2; }
+        .tab-btn.green-tab   { background:#27ae60; }
+        .tab-btn.green-tab.active-tab  { background:#1a8a47; }
+        .tab-btn.orange-tab  { background:#e67e22; }
+        .tab-btn.orange-tab.active-tab { background:#ca6f1e; }
+        .tab-content { display:none; }
+        .tab-content.active { display:block; }
+
+        /* ── Controls ── */
+        .controls {
+            background:#f0f2f5; padding:12px 16px; border-radius:10px;
+            margin-bottom:12px; display:flex; flex-wrap:wrap;
+            align-items:center; justify-content:center; gap:8px;
+        }
+        select { padding:7px 12px; font-size:14px; border-radius:6px; border:2px solid #ccc; cursor:pointer; background:white; }
+        button { padding:7px 16px; font-size:14px; border-radius:6px; border:none; cursor:pointer; font-weight:bold; color:white; background:#4a90e2; }
+        button:hover { filter:brightness(0.9); }
+        button.stop { background:#e74c3c; }
+        .speed-control { display:flex; align-items:center; gap:6px; font-size:13px; font-weight:bold; }
+        .speed-control input[type="range"] { width:90px; cursor:pointer; }
+        label { display:inline-flex; align-items:center; gap:5px; font-size:13px; font-weight:bold; cursor:pointer; }
+        input[type="checkbox"] { width:16px; height:16px; cursor:pointer; }
+
+        /* ── Legend ── */
+        .legend { display:flex; justify-content:center; flex-wrap:wrap; gap:14px; margin-bottom:10px; }
+        .legend-item { display:flex; align-items:center; gap:6px; font-size:13px; }
+        .dot { width:15px; height:15px; border-radius:50%; border:2px solid #444; flex-shrink:0; }
+
+        /* ── Canvas ── */
+        .canvas-wrap { border:3px solid #2c3e50; border-radius:10px; overflow:hidden; background:linear-gradient(to bottom,#ddeeff,#b8d4f0); margin-bottom:14px; }
+        canvas { display:block; width:100%; height:auto; }
+
+        /* ── Info panels ── */
+        .half-eq-title { text-align:center; font-weight:bold; font-size:clamp(0.85rem,2vw,1rem); color:#2c3e50; background:#e8edf5; border-radius:8px; padding:7px 10px; margin-bottom:8px; }
+        .half-eq-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px; }
+        .info-box { background:linear-gradient(135deg,#667eea,#764ba2); padding:12px 14px; border-radius:10px; color:white; font-size:14px; }
+        .info-box h3 { margin-bottom:8px; border-bottom:2px solid rgba(255,255,255,0.3); padding-bottom:6px; font-size:14px; }
+        .info-box p { font-size:13px; line-height:1.6; white-space:pre-line; }
+        /* Chemical equations must always render LTR */
+        .eq-line { display:block; direction:ltr; text-align:left; unicode-bidi:isolate; font-family:'Courier New', monospace; font-size:13px; margin-top:3px; }
+        .eq-label { display:block; text-align:right; direction:rtl; margin-bottom:2px; }
+        .info-box.solution-box { margin-bottom:10px; background:linear-gradient(135deg,#2c3e50,#34495e); }
+        .info-box.overall-box  { margin-bottom:10px; background:linear-gradient(135deg,#1a6e3c,#27ae60); }
+
+        /* ── Warning Toast (centered overlay) ── */
+        #warn-toast {
+            display:none; position:fixed;
+            top:50%; left:50%;
+            transform:translate(-50%,-50%);
+            z-index:9999;
+            background:linear-gradient(135deg,#e67e22,#d35400);
+            color:white; border-radius:14px;
+            padding:20px 26px; max-width:520px; width:92%;
+            box-shadow:0 8px 36px rgba(0,0,0,0.45);
+            font-size:14px; line-height:1.7; text-align:center;
+            opacity:0; transition:opacity 0.5s ease;
+        }
+        #warn-toast.show { opacity:1; }
+        #warn-toast .warn-header { font-size:16px; font-weight:bold; margin-bottom:10px; }
+        #warn-toast .warn-body { font-size:13.5px; opacity:0.97; }
+        #warn-toast .warn-close {
+            margin-top:12px; display:inline-block;
+            background:rgba(255,255,255,0.25); border-radius:6px;
+            padding:4px 14px; font-size:12px; cursor:pointer;
+        }
+        /* dim overlay behind toast */
+        #warn-overlay {
+            display:none; position:fixed; inset:0;
+            background:rgba(0,0,0,0.35); z-index:9998;
+        }
+
+        /* ── Detect Gas Tab ── */
+        .detect-info { text-align:center; font-size:13px; color:#555; margin-bottom:8px; font-weight:bold; }
+        .detect-obs-box { background:#f9f9e8; border:2px solid #c8b400; border-radius:10px; padding:12px 16px; margin-bottom:8px; font-size:14px; color:#5a4800; }
+        .detect-obs-box h4 { margin-bottom:6px; font-size:14px; color:#3a3000; }
+        .detect-result-box { background:#eafaf1; border:2px solid #27ae60; border-radius:10px; padding:12px 16px; font-size:14px; color:#1a5c36; }
+        .detect-result-box h4 { margin-bottom:6px; font-size:14px; }
+
+        /* ── Uses Tab ── */
+        .uses-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:8px; }
+        .use-card { border-radius:14px; padding:18px 16px; color:white; box-shadow:0 4px 14px rgba(0,0,0,0.18); transition:transform 0.18s; cursor:default; }
+        .use-card:hover { transform:translateY(-4px); }
+        .use-card .use-icon { font-size:2.4rem; margin-bottom:8px; display:block; }
+        .use-card h3 { font-size:1rem; margin-bottom:6px; border-bottom:2px solid rgba(255,255,255,0.35); padding-bottom:5px; }
+        .use-card p { font-size:13px; line-height:1.6; opacity:0.93; }
+        .use-card .example { margin-top:8px; background:rgba(255,255,255,0.18); border-radius:6px; padding:5px 9px; font-size:12px; }
+        .uses-intro { text-align:center; background:linear-gradient(135deg,#e67e22,#f39c12); color:white; border-radius:10px; padding:12px 16px; margin-bottom:14px; font-size:14px; font-weight:bold; }
+
+        .signature { text-align:center; color:#95a5a6; font-size:12px; font-style:italic; margin-top:12px; }
+        @media (max-width:500px) {
+            .half-eq-row { grid-template-columns:1fr; }
+            .uses-grid { grid-template-columns:1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Warning overlay + Toast -->
+<div id="warn-overlay" onclick="hideWarning()"></div>
+<div id="warn-toast">
+    <div class="warn-header">⚠️ تنبيه: تحليل كهربائي غير بسيط</div>
+    <div class="warn-body" id="warn-body"></div>
+    <div class="warn-close" onclick="hideWarning()">✕ إغلاق</div>
+</div>
+
+<div class="container">
+    <h1>⚡ محاكاة التحليل الكهربائي ⚡</h1>
+    <p class="subtitle">استكشاف حركة الشوارد في المحاليل الشاردية — المسريان من الغرافيت</p>
+
+    <div class="tabs">
+        <button class="tab-btn active-tab" onclick="switchTab('main',this)">🔬 التجربة الرئيسية</button>
+        <button class="tab-btn green-tab"  onclick="switchTab('detect',this)">🧪 الكشف عن الغاز المنطلق</button>
+        <button class="tab-btn orange-tab" onclick="switchTab('uses',this)">🏭 استعمالات التحليل الكهربائي</button>
+    </div>
+
+    <!-- ══════ TAB 1: MAIN ══════ -->
+    <div id="tab-main" class="tab-content active">
+        <div class="controls">
+            <label for="solution">اختر المحلول:</label>
+            <select id="solution" onchange="onSolutionChange(this.value)">
+                <option value="nacl">كلور الصوديوم (NaCl)</option>
+                <option value="hcl">كلور الهيدروجين (HCl)</option>
+                <option value="agno3">نترات الفضة (AgNO₃)</option>
+                <option value="sncl2">كلور القصدير الثنائي (SnCl₂)</option>
+                <option value="zncl2">كلور الزنك (ZnCl₂)</option>
+                <option value="fecl2">كلور الحديد الثنائي (FeCl₂)</option>
+            </select>
+            <button id="start">▶ بدء</button>
+            <button id="stop" class="stop">⏸ إيقاف</button>
+            <div class="speed-control">
+                <span>🐢</span>
+                <input type="range" id="speedSlider" min="0.3" max="3" step="0.1" value="1">
+                <span id="speedLabel">×1.0</span>
+                <span>🐇</span>
+            </div>
+            <label><input type="checkbox" id="showElectrons" checked> إظهار الإلكترونات</label>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item"><div class="dot" id="legend-pos" style="background:#e74c3c;"></div><span id="legend-pos-label">شوارد موجبة (+)</span></div>
+            <div class="legend-item"><div class="dot" id="legend-neg" style="background:#1a7a3c;"></div><span id="legend-neg-label">شوارد سالبة (-)</span></div>
+            <div class="legend-item"><div class="dot" style="background:#555;"></div><span>مسريا الغرافيت</span></div>
+        </div>
+
+        <div class="canvas-wrap">
+            <canvas id="canvas" width="900" height="400"></canvas>
+        </div>
+
+        <div class="info-box solution-box">
+            <h3>المحلول (الصيغة الشاردية المفصّلة)</h3>
+            <div id="info-solution"></div>
+        </div>
+
+        <div class="half-eq-title">المعادلات النصفية عند كل مسرى (الغرافيت)</div>
+        <div class="half-eq-row">
+            <div class="info-box">
+                <h3>عند المهبط (−)</h3>
+                <div id="info-cathode"></div>
+            </div>
+            <div class="info-box">
+                <h3>عند المصعد (+)</h3>
+                <div id="info-anode"></div>
+            </div>
+        </div>
+
+        <div class="info-box overall-box">
+            <h3>المعادلة الإجمالية</h3>
+            <div id="info-overall"></div>
+        </div>
+    </div>
+
+    <!-- ══════ TAB 2: DETECT GAS ══════ -->
+    <div id="tab-detect" class="tab-content">
+        <!-- NO controls here — synced with Tab 1 -->
+        <div class="controls" style="background:#e8f5e9; border:2px dashed #27ae60;">
+            <span style="font-size:13px; color:#1a5c36; font-weight:bold;">
+                🔗 التجربة متزامنة مع التجربة الرئيسية — تحكّم في التشغيل من التبويب الأول
+            </span>
+            <button id="addIndigo" style="background:#3d0c8a;">💧 إضافة أزرق النيلة</button>
+        </div>
+        <p class="detect-info" id="detect-sol-label"></p>
+        <div class="canvas-wrap">
+            <canvas id="canvas2" width="900" height="420"></canvas>
+        </div>
+        <div class="detect-obs-box">
+            <h4>🔍 الملاحظة:</h4>
+            <p id="obs-text">في انتظار إجراء التجربة...</p>
+        </div>
+        <div class="detect-result-box">
+            <h4>✅ النتيجة:</h4>
+            <p id="result-text">في انتظار إجراء التجربة...</p>
+        </div>
+    </div>
+
+    <!-- ══════ TAB 3: USES ══════ -->
+    <div id="tab-uses" class="tab-content">
+        <div class="uses-intro">
+            🌍 التحليل الكهربائي ليس فقط تجربة في المختبر — إنه يُستخدم يومياً في مصانع وصناعات حول العالم!
+        </div>
+        <div class="uses-grid">
+            <div class="use-card" style="background:linear-gradient(135deg,#1a6e3c,#27ae60);">
+                <span class="use-icon">💍</span>
+                <h3>طلاء المعادن بالذهب أو الفضة</h3>
+                <p>يُغمر الشيء المراد طلاؤه كمهبط في محلول يحتوي على شوارد الذهب. بمرور التيار، تكتسب هذه الشوارد إلكترونات وتترسب كطبقة رقيقة من ذرات الذهب اللامعة.</p>
+                <div class="example">📦 مثال: الساعات والمجوهرات والأدوات الطبية</div>
+            </div>
+            <div class="use-card" style="background:linear-gradient(135deg,#1a3c6e,#2980b9);">
+                <span class="use-icon">🔋</span>
+                <h3>إنتاج الألومنيوم</h3>
+                <p>يُصهر أكسيد الألمنيوم (الألومينا) ثم يُمرَّر تيار كهربائي عالٍ، مما يؤدي لترسب الألمنيوم النقي عند المهبط.</p>
+                <div class="example">✈️ مثال: هياكل الطائرات، العلب، والنوافذ</div>
+            </div>
+            <div class="use-card" style="background:linear-gradient(135deg,#6e1a1a,#e74c3c);">
+                <span class="use-icon">🧴</span>
+                <h3>تنقية النحاس</h3>
+                <p>النحاس الخام يحتوي على شوائب. نجعله مصعداً فيذوب، ثم يترسب النحاس النقي فقط على المهبط، وتبقى الشوائب في المحلول.</p>
+                <div class="example">⚡ مثال: الأسلاك الكهربائية تحتاج نحاساً نقياً 99.9%</div>
+            </div>
+            <div class="use-card" style="background:linear-gradient(135deg,#4a0e7a,#8e44ad);">
+                <span class="use-icon">🧪</span>
+                <h3>إنتاج غاز الكلور والصودا الكاوية</h3>
+                <p>بتحليل محلول ملح الطعام (NaCl) كهربائياً، ننتج غاز Cl₂ عند المصعد وNaOH عند المهبط.</p>
+                <div class="example">🏭 مثال: تعقيم مياه الشرب وصناعة البلاستيك</div>
+            </div>
+            <div class="use-card" style="background:linear-gradient(135deg,#7a6a0e,#f1c40f); color:#2c2c00;">
+                <span class="use-icon">💧</span>
+                <h3>إنتاج غاز الهيدروجين</h3>
+                <p>بتمرير الكهرباء في الماء المحمض، ينتج غاز H₂ عند المهبط — وهو مصدر طاقة نظيف مستقبلي!</p>
+                <div class="example">🚗 مثال: السيارات التي تعمل بخلايا الهيدروجين</div>
+            </div>
+            <div class="use-card" style="background:linear-gradient(135deg,#0e5c7a,#16a085);">
+                <span class="use-icon">🦷</span>
+                <h3>طلاء الأسنان الاصطناعية</h3>
+                <p>يُستخدم التحليل الكهربائي لطلاء الأسنان الاصطناعية بطبقة معدنية دقيقة تجعلها أكثر صلابة ومقاومة.</p>
+                <div class="example">🏥 مثال: تيجان الأسنان المطلية بالكروم أو الذهب</div>
+            </div>
+        </div>
+        <div style="margin-top:16px;background:#f0f5ff;border-radius:10px;padding:12px 16px;font-size:13px;color:#2c3e50;border-right:4px solid #4a90e2;">
+            💡 <strong>خلاصة:</strong> التحليل الكهربائي = استخدام التيار الكهربائي لإجراء تفاعلات كيميائية لا تحدث من تلقاء نفسها.
+        </div>
+    </div>
+
+    <p class="signature">PhysicLab</p>
+</div>
+
+<script>
+/* ============================================================
+   DATA
+============================================================ */
+let running  = false;
+let currentSolution = 'nacl';
+let showElectrons = true;
+let speedFactor = 1;
+
+// Indigo state
+let indigoLevel = 0;       // 0..1 — current blue intensity in vat
+let indigoDrops = [];      // visual drops falling
+let obsWritten  = false;   // whether obs/result have been filled
+let indigoAdded = false;   // track if indigo was ever added this session
+
+const solutions = {
+    nacl: {
+        positive: { symbol: 'Na⁺', color: '#e74c3c', count: 28 },
+        negative: { symbol: 'Cl⁻', color: '#1a7a3c', count: 28 },
+        infoLines: [
+            { ar: 'تفكّك كلور الصوديوم في الماء:' },
+            { eq: 'NaCl(aq) → (Na⁺ + Cl⁻)(aq)' },
+            { ar: 'المحلول يحتوي على: Na⁺(aq) و Cl⁻(aq)' }
+        ],
+        anodeLabel: 'ينطلق غاز ثنائي الكلور:',
+        anodeEq:    '2Cl⁻(aq) → Cl₂(g) + 2e⁻',
+        cathodeLabel: 'ينطلق غاز الهيدروجين:',
+        cathodeEq:    '2H₂O(l) + 2e⁻ → H₂(g) + 2OH⁻(aq)',
+        overallLabel: '',
+        overallEq:  '2(Na⁺ + Cl⁻)(aq) + 2H₂O(l) → Cl₂(g) + H₂(g) + 2Na⁺(aq) + 2OH⁻(aq)',
+        hasMetalDeposit: false, hasClGas: true, hasH2Gas: true,
+        detectHasCl2: true,
+        label: 'المحلول: كلور الصوديوم (NaCl) — الغاز عند المصعد: Cl₂',
+        isSimple: false,
+        warnMsg: 'ينحلّ الماء عند المهبط بدلاً من ترسّب معدن.\n⬅ هذا التحليل غير بسيط.'
+    },
+    hcl: {
+        positive: { symbol: 'H⁺',  color: '#e67e22', count: 30 },
+        negative: { symbol: 'Cl⁻', color: '#1a7a3c', count: 30 },
+        infoLines: [
+            { ar: 'تفكّك كلور الهيدروجين في الماء:' },
+            { eq: 'HCl(aq) → (H⁺ + Cl⁻)(aq)' },
+            { ar: 'المحلول يحتوي على: H⁺(aq) و Cl⁻(aq)' }
+        ],
+        anodeLabel: 'ينطلق غاز ثنائي الكلور:',
+        anodeEq:    '2Cl⁻(aq) → Cl₂(g) + 2e⁻',
+        cathodeLabel: 'ينطلق غاز الهيدروجين:',
+        cathodeEq:    '2H⁺(aq) + 2e⁻ → H₂(g)',
+        overallLabel: '',
+        overallEq:  '2(H⁺ + Cl⁻)(aq) → H₂(g) + Cl₂(g)',
+        hasMetalDeposit: false, hasClGas: true, hasH2Gas: true,
+        detectHasCl2: true,
+        label: 'المحلول: كلور الهيدروجين (HCl) — الغاز عند المصعد: Cl₂',
+        isSimple: true, warnMsg: ''
+    },
+    agno3: {
+        positive: { symbol: 'Ag⁺',  color: '#bdc3c7', count: 22 },
+        negative: { symbol: 'NO₃⁻', color: '#e74c3c', count: 22 },
+        infoLines: [
+            { ar: 'تفكّك نترات الفضة في الماء:' },
+            { eq: 'AgNO₃(aq) → (Ag⁺ + NO₃⁻)(aq)' },
+            { ar: 'المحلول يحتوي على: Ag⁺(aq) و NO₃⁻(aq)' }
+        ],
+        anodeLabel: 'ينطلق غاز الأكسجين:',
+        anodeEq:    '2H₂O(l) → O₂(g) + 4H⁺(aq) + 4e⁻',
+        cathodeLabel: 'يترسب معدن الفضة:',
+        cathodeEq:    'Ag⁺(aq) + e⁻ → Ag(s)',
+        overallLabel: '',
+        overallEq:  '(4Ag⁺ + 4NO₃⁻)(aq) + 2H₂O(l) → 4Ag(s) + O₂(g) + 4H⁺(aq) + 4NO₃⁻(aq)',
+        hasMetalDeposit: true, metalColor: '#c0c0c0', hasClGas: false,
+        detectHasCl2: false,
+        label: 'المحلول: نترات الفضة (AgNO₃) — الغاز عند المصعد: O₂',
+        isSimple: false,
+        warnMsg: 'ينحلّ الماء عند المصعد بدلاً من شوارد NO₃⁻.\n⬅ هذا التحليل غير بسيط.'
+    },
+    sncl2: {
+        positive: { symbol: 'Sn²⁺', color: '#7f8c8d', count: 20 },
+        negative: { symbol: 'Cl⁻',  color: '#1a7a3c', count: 40 },
+        infoLines: [
+            { ar: 'تفكّك كلور القصدير الثنائي في الماء:' },
+            { eq: 'SnCl₂(aq) → (Sn²⁺ + 2Cl⁻)(aq)' },
+            { ar: 'المحلول يحتوي على: Sn²⁺(aq) و Cl⁻(aq)' }
+        ],
+        anodeLabel: 'ينطلق غاز ثنائي الكلور:',
+        anodeEq:    '2Cl⁻(aq) → Cl₂(g) + 2e⁻',
+        cathodeLabel: 'يترسب معدن القصدير:',
+        cathodeEq:    'Sn²⁺(aq) + 2e⁻ → Sn(s)',
+        overallLabel: '',
+        overallEq:  '(Sn²⁺ + 2Cl⁻)(aq) → Sn(s) + Cl₂(g)',
+        hasMetalDeposit: true, metalColor: '#a8a9ad', hasClGas: true,
+        detectHasCl2: true,
+        label: 'المحلول: كلور القصدير (SnCl₂) — الغاز عند المصعد: Cl₂',
+        isSimple: true, warnMsg: ''
+    },
+    zncl2: {
+        positive: { symbol: 'Zn²⁺', color: '#7f8c8d', count: 20 },
+        negative: { symbol: 'Cl⁻',  color: '#1a7a3c', count: 40 },
+        infoLines: [
+            { ar: 'تفكّك كلور الزنك في الماء:' },
+            { eq: 'ZnCl₂(aq) → (Zn²⁺ + 2Cl⁻)(aq)' },
+            { ar: 'المحلول يحتوي على: Zn²⁺(aq) و Cl⁻(aq)' }
+        ],
+        anodeLabel: 'ينطلق غاز ثنائي الكلور:',
+        anodeEq:    '2Cl⁻(aq) → Cl₂(g) + 2e⁻',
+        cathodeLabel: 'يترسب معدن الزنك:',
+        cathodeEq:    'Zn²⁺(aq) + 2e⁻ → Zn(s)',
+        overallLabel: '',
+        overallEq:  '(Zn²⁺ + 2Cl⁻)(aq) → Zn(s) + Cl₂(g)',
+        hasMetalDeposit: true, metalColor: '#b0b7c3', hasClGas: true,
+        detectHasCl2: true,
+        label: 'المحلول: كلور الزنك (ZnCl₂) — الغاز عند المصعد: Cl₂',
+        isSimple: true, warnMsg: ''
+    },
+    fecl2: {
+        positive: { symbol: 'Fe²⁺', color: '#a0d468', count: 20 },
+        negative: { symbol: 'Cl⁻',  color: '#1a7a3c', count: 40 },
+        infoLines: [
+            { ar: 'تفكّك كلور الحديد الثنائي في الماء:' },
+            { eq: 'FeCl₂(aq) → (Fe²⁺ + 2Cl⁻)(aq)' },
+            { ar: 'المحلول يحتوي على: Fe²⁺(aq) و Cl⁻(aq)' }
+        ],
+        anodeLabel: 'ينطلق غاز ثنائي الكلور:',
+        anodeEq:    '2Cl⁻(aq) → Cl₂(g) + 2e⁻',
+        cathodeLabel: 'يترسب معدن الحديد:',
+        cathodeEq:    'Fe²⁺(aq) + 2e⁻ → Fe(s)',
+        overallLabel: '',
+        overallEq:  '(Fe²⁺ + 2Cl⁻)(aq) → Fe(s) + Cl₂(g)',
+        hasMetalDeposit: true, metalColor: '#808080', hasClGas: true,
+        detectHasCl2: true,
+        label: 'المحلول: كلور الحديد الثنائي (FeCl₂) — الغاز عند المصعد: Cl₂',
+        isSimple: true, warnMsg: ''
+    }
+};
+
+/* ============================================================
+   PARTICLE CLASSES
+============================================================ */
+class Ion {
+    constructor(type, symbol, color, W, H) {
+        this.type = type; this.symbol = symbol; this.color = color;
+        this.W = W; this.H = H;
+        this.size = Math.max(9, W * 0.013);
+        this.baseSpeed = (0.5 + Math.random() * 0.3) * (W / 800);
+        this.reset(true);
+    }
+    reset(init) {
+        const { W, H } = this;
+        const lb = W * 0.11, rb = W * 0.89, mid = (lb + rb) / 2;
+        this.x = init ? lb + Math.random() * (rb - lb)
+            : this.type === 'positive' ? mid + Math.random() * (rb - mid)
+            : lb + Math.random() * (mid - lb);
+        this.y = H * 0.12 + Math.random() * H * 0.74;
+    }
+    move(scene, sol) {
+        const { W, H } = this;
+        const spd = this.baseSpeed * speedFactor;
+        const lE = W * 0.082, rE = W * 0.918;
+        if (running) {
+            if (this.type === 'positive') {
+                this.x -= spd;
+                if (this.x < lE + W * 0.02) {
+                    if (sol.hasMetalDeposit && Math.random() < 0.3)
+                        scene.metalDeposits.push(new MetalDeposit(lE + W * 0.02, this.y, sol.metalColor, W, H));
+                    if (sol.hasH2Gas && Math.random() < 0.25)
+                        scene.gasParticles.push(new GasBubble(lE + W * 0.02, this.y, W, H, 'h2'));
+                    this.reset(false);
+                }
+            } else {
+                this.x += spd;
+                if (this.x > rE - W * 0.02) {
+                    if (sol.hasClGas && Math.random() < 0.3)
+                        scene.gasParticles.push(new GasBubble(rE - W * 0.02, this.y, W, H, 'cl2'));
+                    this.reset(false);
+                }
+            }
+        }
+        this.y += (Math.random() - 0.5) * 0.6;
+        this.y = Math.max(H * 0.08, Math.min(H * 0.92, this.y));
+    }
+    draw(ctx) {
+        ctx.fillStyle = this.color;
+        ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
+        ctx.strokeStyle = '#000'; ctx.lineWidth = 1.5; ctx.stroke();
+        ctx.fillStyle = '#fff';
+        ctx.font = `bold ${Math.max(7, this.size * 0.82)}px Arial`;
+        ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.fillText(this.symbol, this.x, this.y);
+    }
+}
+class MetalDeposit {
+    static reset() {}
+
+    constructor(x, y, color, W, H) {
+        this.color = color;
+        this.size = (2.5 + Math.random() * 2.5) * (W / 800);
+        this.settled = false;
+        this.W = W; this.H = H;
+        // Start exactly where the ion arrived
+        this.x = x;
+        this.y = y;
+        // Target: cathode right face + small random offset (1 atom deep max)
+        const cathRight = W * 0.070;
+        this.targetX = cathRight + this.size * (0.4 + Math.random() * 0.8);
+        // Y stays the same — pure horizontal movement toward cathode
+        this.targetY = y;
+    }
+    update() {
+        if (!this.settled) {
+            const dx = this.targetX - this.x;
+            // Only move horizontally
+            if (Math.abs(dx) < 1.5) {
+                this.x = this.targetX;
+                this.settled = true;
+            } else {
+                const spd = Math.min(4, Math.abs(dx) * 0.18) * speedFactor;
+                this.x -= spd; // move left toward cathode
+            }
+        }
+    }
+    draw(ctx) {
+        const sz = this.size;
+        const silverGrad = ctx.createRadialGradient(
+            this.x - sz * 0.3, this.y - sz * 0.3, sz * 0.05,
+            this.x, this.y, sz
+        );
+        silverGrad.addColorStop(0, '#f5f5f5');
+        silverGrad.addColorStop(0.45, '#c8c8c8');
+        silverGrad.addColorStop(1, '#808080');
+        ctx.fillStyle = silverGrad;
+        ctx.beginPath(); ctx.arc(this.x, this.y, sz, 0, Math.PI * 2); ctx.fill();
+        ctx.strokeStyle = '#555'; ctx.lineWidth = 0.5; ctx.stroke();
+    }
+}
+class GasBubble {
+    constructor(x, y, W, H, type) {
+        this.x = x + (Math.random() - 0.5) * W * 0.016;
+        this.y = y;
+        this.type = type || 'cl2';
+        this.size = (4 + Math.random() * 4) * (W / 800);
+        this.baseSpeed = (1 + Math.random() * 1.5) * (H / 400);
+        this.alpha = 0.85; this.H = H;
+    }
+    update() { this.y -= this.baseSpeed * speedFactor; this.alpha -= 0.01; return this.y > this.H * 0.07 && this.alpha > 0; }
+    draw(ctx) {
+        ctx.globalAlpha = this.alpha;
+        if (this.type === 'h2') {
+            ctx.fillStyle = '#aed6f1';
+            ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
+            ctx.strokeStyle = '#2980b9'; ctx.lineWidth = 1; ctx.stroke();
+            ctx.fillStyle = '#1a5276';
+        } else {
+            ctx.fillStyle = '#d4e157';
+            ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
+            ctx.strokeStyle = '#9e9d24'; ctx.lineWidth = 1; ctx.stroke();
+            ctx.fillStyle = '#000';
+        }
+        ctx.font = `bold ${Math.max(6, this.size * 0.9)}px Arial`;
+        ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.fillText(this.type === 'h2' ? 'H₂' : 'Cl₂', this.x, this.y);
+        ctx.globalAlpha = 1;
+    }
+}
+class Electron {
+    constructor(W, H) {
+        this.progress = Math.random();
+        this.baseSpeed = 0.003 + Math.random() * 0.002;
+        this.size = Math.max(4, W * 0.006);
+        this.W = W; this.H = H;
+    }
+    update() { this.progress += this.baseSpeed * speedFactor; if (this.progress > 1) this.progress = 0; }
+    getPos() {
+        const { W, H } = this;
+        const path = [
+            { x: W*0.951, y: H*0.032 }, { x: W*0.62, y: H*0.032 },
+            { x: W*0.38,  y: H*0.032 }, { x: W*0.049, y: H*0.032 }
+        ];
+        const segs = path.length - 1, sp = this.progress * segs;
+        const cs = Math.min(Math.floor(sp), segs - 1), sf = sp - cs;
+        return { x: path[cs].x + (path[cs+1].x - path[cs].x)*sf, y: path[cs].y };
+    }
+    draw(ctx) {
+        const p = this.getPos();
+        ctx.fillStyle = '#2980b9';
+        ctx.beginPath(); ctx.arc(p.x, p.y, this.size, 0, Math.PI*2); ctx.fill();
+        ctx.strokeStyle = '#1a5276'; ctx.lineWidth = 1.5; ctx.stroke();
+        ctx.fillStyle = 'white';
+        ctx.font = `bold ${Math.max(8, this.size*1.8)}px Arial`;
+        ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.fillText('e⁻', p.x, p.y);
+    }
+}
+
+/* ============================================================
+   SHARED DRAW BASE SCENE
+   Graphite electrodes: dark gray, hatched look
+============================================================ */
+function drawBase(ctx, W, H, sol, extraEH) {
+    const eW = W*0.050, eH = H*(extraEH||0.76);
+    const cathX = W*0.020, anodX = W*0.930;
+    const eTop = H*0.130;
+    const catCX = cathX + eW/2, anoCX = anodX + eW/2;
+    const wireY = H*0.032, batL = W*0.38, batR = W*0.62;
+    const lw = Math.max(2, W*0.003);
+
+    // Wires
+    ctx.strokeStyle = '#c0392b'; ctx.lineWidth = lw;
+    ctx.beginPath(); ctx.moveTo(catCX,eTop); ctx.lineTo(catCX,wireY); ctx.lineTo(batL,wireY); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(anoCX,eTop); ctx.lineTo(anoCX,wireY); ctx.lineTo(batR,wireY); ctx.stroke();
+
+    // Battery
+    const bH = H*0.048, bW = batR - batL;
+    ctx.fillStyle = '#2c3e50'; ctx.fillRect(batL, wireY - bH/2, bW, bH);
+    ctx.fillStyle = '#e74c3c'; ctx.fillRect(batR - W*0.014, wireY - bH*0.38, W*0.014, bH*0.76);
+    ctx.fillStyle = '#ecf0f1';
+    ctx.font = `bold ${Math.round(H*0.036)}px Arial`;
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText('⚡', W*0.5, wireY);
+
+    // ── Graphite cathode (−): dark gray with hatch ──
+    const grad = ctx.createLinearGradient(cathX, eTop, cathX+eW, eTop+eH);
+    grad.addColorStop(0,'#555'); grad.addColorStop(1,'#333');
+    ctx.fillStyle = grad; ctx.fillRect(cathX, eTop, eW, eH);
+    // hatch lines
+    ctx.save(); ctx.clipRect ? null : ctx.save();
+    ctx.beginPath(); ctx.rect(cathX, eTop, eW, eH); ctx.clip();
+    ctx.strokeStyle = 'rgba(255,255,255,0.12)'; ctx.lineWidth = 1;
+    for (let i = -eH; i < eH+eW; i += 5) {
+        ctx.beginPath(); ctx.moveTo(cathX + i, eTop); ctx.lineTo(cathX + i + eH, eTop + eH); ctx.stroke();
+    }
+    ctx.restore();
+    ctx.strokeStyle = '#1a1a1a'; ctx.lineWidth = 2; ctx.strokeRect(cathX, eTop, eW, eH);
+    ctx.fillStyle = '#fff';
+    ctx.font = `bold ${Math.round(H*0.08)}px Arial`;
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText('−', catCX, H*0.515);
+    ctx.fillStyle = '#1a252f';
+    ctx.font = `bold ${Math.round(H*0.032)}px Arial`;
+    ctx.fillText('مهبط', catCX, eTop - H*0.046);
+    ctx.font = `${Math.round(H*0.022)}px Arial`;
+    ctx.fillStyle = '#555';
+    ctx.fillText('(غرافيت)', catCX, eTop - H*0.024);
+    if (sol.hasMetalDeposit && running) {
+        ctx.fillStyle = '#888';
+        ctx.font = `bold ${Math.round(H*0.025)}px Arial`;
+        ctx.textAlign = 'left';
+        ctx.fillText('← ترسب معدني', cathX + eW + W*0.01, eTop + eH*0.5);
+        ctx.textAlign = 'center';
+    }
+
+    // ── Graphite anode (+): same dark gray ──
+    const grad2 = ctx.createLinearGradient(anodX, eTop, anodX+eW, eTop+eH);
+    grad2.addColorStop(0,'#555'); grad2.addColorStop(1,'#333');
+    ctx.fillStyle = grad2; ctx.fillRect(anodX, eTop, eW, eH);
+    ctx.save();
+    ctx.beginPath(); ctx.rect(anodX, eTop, eW, eH); ctx.clip();
+    ctx.strokeStyle = 'rgba(255,255,255,0.12)'; ctx.lineWidth = 1;
+    for (let i = -eH; i < eH+eW; i += 5) {
+        ctx.beginPath(); ctx.moveTo(anodX + i, eTop); ctx.lineTo(anodX + i + eH, eTop + eH); ctx.stroke();
+    }
+    ctx.restore();
+    ctx.strokeStyle = '#1a1a1a'; ctx.lineWidth = 2; ctx.strokeRect(anodX, eTop, eW, eH);
+    ctx.fillStyle = '#fff';
+    ctx.font = `bold ${Math.round(H*0.08)}px Arial`;
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText('+', anoCX, H*0.515);
+    ctx.fillStyle = '#1a252f';
+    ctx.font = `bold ${Math.round(H*0.032)}px Arial`;
+    ctx.fillText('مصعد', anoCX, eTop - H*0.046);
+    ctx.font = `${Math.round(H*0.022)}px Arial`;
+    ctx.fillStyle = '#555';
+    ctx.fillText('(غرافيت)', anoCX, eTop - H*0.024);
+    if (sol.hasClGas && running) {
+        ctx.fillStyle = '#7d6608';
+        ctx.font = `bold ${Math.round(H*0.027)}px Arial`;
+        ctx.fillText('غاز Cl₂', anoCX, eTop + eH + H*0.038);
+    }
+
+    // Signature
+    ctx.fillStyle = 'rgba(100,100,100,0.4)';
+    ctx.font = `italic ${Math.round(H*0.026)}px Arial`;
+    ctx.textAlign = 'right'; ctx.textBaseline = 'bottom';
+    ctx.fillText('PhysicLab', W*0.99, H*0.99);
+
+    return { catCX, anoCX, eTop, eH };
+}
+
+/* ============================================================
+   SCENE 1 — Main
+============================================================ */
+class Scene1 {
+    constructor(canvas) {
+        this.canvas = canvas;
+        this.ctx = canvas.getContext('2d');
+        this.particles = []; this.metalDeposits = []; this.gasParticles = []; this.electrons = []; MetalDeposit.reset();
+    }
+    get W() { return this.canvas.width; }
+    get H() { return this.canvas.height; }
+    init(key) {
+        this.particles = []; this.metalDeposits = []; this.gasParticles = []; this.electrons = []; MetalDeposit.reset();
+        const sol = solutions[key];
+        for (let i = 0; i < 14; i++) this.electrons.push(new Electron(this.W, this.H));
+        const mk = (t,s,c) => new Ion(t,s,c,this.W,this.H);
+        for (let i = 0; i < sol.positive.count; i++) this.particles.push(mk('positive', sol.positive.symbol, sol.positive.color));
+        for (let i = 0; i < sol.negative.count; i++) this.particles.push(mk('negative', sol.negative.symbol, sol.negative.color));
+    }
+    frame() {
+        const ctx = this.ctx; const W = this.W, H = this.H;
+        ctx.clearRect(0,0,W,H);
+        const sol = solutions[currentSolution];
+        drawBase(ctx, W, H, sol, 0.76);
+        if (showElectrons && running) this.electrons.forEach(e => { e.update(); e.draw(ctx); });
+        this.metalDeposits.forEach(d => { d.update(); d.draw(ctx); });
+        this.gasParticles = this.gasParticles.filter(b => { const a=b.update(); if(a)b.draw(ctx); return a; });
+        this.particles.forEach(p => { p.move(this, sol); p.draw(ctx); });
+        if (this.metalDeposits.length > 120) this.metalDeposits = this.metalDeposits.slice(-120);
+    }
+}
+
+/* ============================================================
+   SCENE 2 — Detect Gas (SYNCED: shares running & solution)
+============================================================ */
+class Scene2 {
+    constructor(canvas) {
+        this.canvas = canvas;
+        this.ctx = canvas.getContext('2d');
+        this.particles = []; this.metalDeposits = []; this.gasParticles = []; this.electrons = []; MetalDeposit.reset();
+    }
+    get W() { return this.canvas.width; }
+    get H() { return this.canvas.height; }
+    init(key) {
+        this.particles = []; this.metalDeposits = []; this.gasParticles = []; this.electrons = []; MetalDeposit.reset();
+        indigoLevel = 0; indigoDrops = []; obsWritten = false; indigoAdded = false;
+        resetDetectUI();
+        const sol = solutions[key];
+        for (let i = 0; i < 14; i++) this.electrons.push(new Electron(this.W, this.H));
+        const mk = (t,s,c) => new Ion(t,s,c,this.W,this.H);
+        for (let i = 0; i < sol.positive.count; i++) this.particles.push(mk('positive', sol.positive.symbol, sol.positive.color));
+        for (let i = 0; i < sol.negative.count; i++) this.particles.push(mk('negative', sol.negative.symbol, sol.negative.color));
+    }
+    frame() {
+        const ctx = this.ctx; const W = this.W, H = this.H;
+        ctx.clearRect(0,0,W,H);
+        const sol = solutions[currentSolution];
+
+        const eW = W*0.050, eH = H*0.72;
+        const anodX = W*0.930;
+        const eTop = H*0.155;
+        const { catCX, anoCX } = drawBase(ctx, W, H, sol, 0.72);
+
+        // Indigo patch in solution near anode
+        if (indigoLevel > 0) {
+            const hasCl = sol.detectHasCl2;
+            // If running and has Cl2 → fading fast; else stays
+            const visAlpha = (hasCl && running)
+                ? Math.max(0, indigoLevel * 0.5)
+                : indigoLevel * 0.5;
+            ctx.fillStyle = `rgba(30,0,120,${visAlpha})`;
+            ctx.beginPath();
+            ctx.ellipse(anoCX - W*0.06, eTop + eH*0.4, W*0.10, H*0.16, 0, 0, Math.PI*2);
+            ctx.fill();
+        }
+
+        // Burette (سحاحة)
+        const burX = Math.min(anoCX + W*0.028, W*0.965);
+        const burTop = H*0.01, burH = H*0.11, burW = W*0.018;
+        ctx.strokeStyle='#555'; ctx.lineWidth=2;
+        ctx.fillStyle='rgba(200,220,255,0.55)';
+        ctx.fillRect(burX-burW/2, burTop, burW, burH);
+        ctx.strokeRect(burX-burW/2, burTop, burW, burH);
+        // tip
+        ctx.beginPath();
+        ctx.moveTo(burX-burW/4, burTop+burH); ctx.lineTo(burX+burW/4, burTop+burH);
+        ctx.lineTo(burX+burW/6, burTop+burH+H*0.035); ctx.lineTo(burX-burW/6, burTop+burH+H*0.035);
+        ctx.closePath(); ctx.fill(); ctx.stroke();
+        // indigo fill in burette
+        const bFill = Math.max(0, burH*0.75*(1 - indigoLevel*0.7));
+        ctx.fillStyle='rgba(40,0,140,0.72)';
+        ctx.fillRect(burX-burW/2+2, burTop+burH-(burH*0.75)+bFill, burW-4, (burH*0.75)-bFill);
+        ctx.fillStyle='#3d0c8a';
+        ctx.font=`bold ${Math.round(H*0.027)}px Arial`;
+        ctx.textAlign='center';
+        ctx.fillText('سحاحة', burX, burTop - H*0.006);
+        ctx.font=`${Math.round(H*0.022)}px Arial`;
+        ctx.fillText('(أزرق النيلة)', burX, burTop+H*0.020);
+
+        // Fade indigo if running and Cl2 present
+        if (running && sol.detectHasCl2 && indigoLevel > 0 && indigoAdded) {
+            indigoLevel = Math.max(0, indigoLevel - 0.0025 * speedFactor);
+            // When color has faded enough, write obs/result
+            if (!obsWritten && indigoLevel < 0.15) {
+                obsWritten = true;
+                document.getElementById('obs-text').textContent =
+                    'لاحظنا زوال لون أزرق النيلة تدريجياً داخل وعاء التحليل بجوار المصعد.';
+                document.getElementById('result-text').textContent =
+                    'الغاز المنطلق يُزيل الألوان ← إذن هو غاز ثنائي الكلور Cl₂';
+            }
+        } else if (indigoAdded && !sol.detectHasCl2 && !obsWritten) {
+            // No Cl2 — color stays, write different result after a moment
+            if (indigoLevel > 0.2) {
+                document.getElementById('obs-text').textContent =
+                    'لاحظنا بقاء لون أزرق النيلة دون تغيير.';
+                document.getElementById('result-text').textContent =
+                    'الغاز المنطلق لا يُزيل الألوان ← ليس غاز ثنائي الكلور';
+                obsWritten = true;
+            }
+        }
+
+        // Indigo drops falling
+        indigoDrops = indigoDrops.filter(d => {
+            if (!d.done) {
+                d.y += d.vy;
+                d.vy += 0.18; // gravity acceleration
+                const sz = d.size || 5;
+                // Draw teardrop shape
+                ctx.globalAlpha = 0.9;
+                ctx.fillStyle = '#2a007a';
+                ctx.beginPath();
+                ctx.arc(d.x, d.y, sz, 0, Math.PI*2);
+                ctx.fill();
+                // Small highlight
+                ctx.fillStyle = 'rgba(180,120,255,0.5)';
+                ctx.beginPath();
+                ctx.arc(d.x - sz*0.25, d.y - sz*0.25, sz*0.35, 0, Math.PI*2);
+                ctx.fill();
+                ctx.globalAlpha = 1;
+                // When it hits the solution surface, mark as splashed
+                if (!d.splashed && d.y > eTop + eH*0.15) {
+                    d.splashed = true;
+                    d.splashR = 1;
+                }
+                // Draw splash ring after impact
+                if (d.splashed && d.splashR < 18) {
+                    d.splashR += 1.5;
+                    ctx.globalAlpha = Math.max(0, 0.7 - d.splashR/18);
+                    ctx.strokeStyle = '#3d0c8a';
+                    ctx.lineWidth = 1.5;
+                    ctx.beginPath();
+                    ctx.ellipse(d.x, d.y, d.splashR, d.splashR*0.4, 0, 0, Math.PI*2);
+                    ctx.stroke();
+                    ctx.globalAlpha = 1;
+                }
+                if (d.y > eTop + eH*0.35) d.done = true;
+            }
+            return !d.done;
+        });
+
+        if (running) this.electrons.forEach(e => { e.update(); e.draw(ctx); });
+        this.metalDeposits.forEach(d => { d.update(); d.draw(ctx); });
+        this.gasParticles = this.gasParticles.filter(b => { const a=b.update(); if(a)b.draw(ctx); return a; });
+        this.particles.forEach(p => { p.move(this, sol); p.draw(ctx); });
+        if (this.metalDeposits.length > 120) this.metalDeposits = this.metalDeposits.slice(-120);
+    }
+}
+
+/* ============================================================
+   WARNING TOAST
+============================================================ */
+let warnTimer = null;
+function showWarning(msg) {
+    if (!msg) return;
+    const toast = document.getElementById('warn-toast');
+    const overlay = document.getElementById('warn-overlay');
+    document.getElementById('warn-body').textContent = msg;
+    toast.style.display = 'block';
+    overlay.style.display = 'block';
+    requestAnimationFrame(() => requestAnimationFrame(() => toast.classList.add('show')));
+    if (warnTimer) clearTimeout(warnTimer);
+    // Auto-dismiss after 9 s
+    warnTimer = setTimeout(hideWarning, 9000);
+}
+function hideWarning() {
+    if (warnTimer) clearTimeout(warnTimer);
+    const toast = document.getElementById('warn-toast');
+    const overlay = document.getElementById('warn-overlay');
+    toast.classList.remove('show');
+    setTimeout(() => { toast.style.display='none'; overlay.style.display='none'; }, 500);
+}
+
+/* ============================================================
+   BOOTSTRAP
+============================================================ */
+const scene1 = new Scene1(document.getElementById('canvas'));
+const scene2 = new Scene2(document.getElementById('canvas2'));
+
+function resetDetectUI() {
+    document.getElementById('obs-text').textContent    = 'في انتظار إجراء التجربة...';
+    document.getElementById('result-text').textContent = 'في انتظار إجراء التجربة...';
+}
+
+// Helper: render a label + LTR equation into a container div
+function renderEq(containerId, label, eq) {
+    const el = document.getElementById(containerId);
+    el.innerHTML =
+        `<span class="eq-label">${label}</span>` +
+        `<span class="eq-line">${eq}</span>`;
+}
+
+// Helper: render multi-line info (mix of AR text and LTR equations)
+function renderInfo(containerId, lines) {
+    const el = document.getElementById(containerId);
+    el.innerHTML = lines.map(l =>
+        l.eq
+            ? `<span class="eq-line">${l.eq}</span>`
+            : `<span class="eq-label" style="margin-top:2px;">${l.ar}</span>`
+    ).join('');
+}
+
+function updatePanel(key) {
+    const sol = solutions[key];
+    renderInfo('info-solution', sol.infoLines);
+    renderEq('info-anode',   sol.anodeLabel,   sol.anodeEq);
+    renderEq('info-cathode', sol.cathodeLabel, sol.cathodeEq);
+    renderEq('info-overall', sol.overallLabel || 'المعادلة الإجمالية:', sol.overallEq);
+    document.getElementById('detect-sol-label').textContent = sol.label;
+    // Update legend dot colors to match current solution
+    document.getElementById('legend-pos').style.background = sol.positive.color;
+    document.getElementById('legend-neg').style.background = sol.negative.color;
+    document.getElementById('legend-pos-label').textContent = sol.positive.symbol + ' (شوارد موجبة)';
+    document.getElementById('legend-neg-label').textContent = sol.negative.symbol + ' (شوارد سالبة)';
+}
+
+function onSolutionChange(key) {
+    currentSolution = key;
+    running = false;
+    scene1.init(key);
+    scene2.init(key);
+    updatePanel(key);
+}
+
+function switchTab(name, btn) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active-tab'));
+    document.getElementById('tab-' + name).classList.add('active');
+    btn.classList.add('active-tab');
+}
+
+// Tab 1 controls
+document.getElementById('start').addEventListener('click', () => {
+    running = true;
+    const sol = solutions[currentSolution];
+    if (!sol.isSimple && sol.warnMsg) showWarning(sol.warnMsg);
+});
+document.getElementById('stop').addEventListener('click', () => { running = false; });
+document.getElementById('showElectrons').addEventListener('change', e => { showElectrons = e.target.checked; });
+document.getElementById('speedSlider').addEventListener('input', function() {
+    speedFactor = parseFloat(this.value);
+    document.getElementById('speedLabel').textContent = '×' + speedFactor.toFixed(1);
+});
+
+// Detect tab — only indigo button
+document.getElementById('addIndigo').addEventListener('click', () => {
+    const W = scene2.W, H = scene2.H;
+    const anoCX = W*0.930 + W*0.025;
+    indigoLevel = Math.min(1, indigoLevel + 0.35);
+    indigoAdded = true;
+    obsWritten = false; // reset so result can be re-triggered
+    // Reset UI text to "in progress" state
+    document.getElementById('obs-text').textContent = 'تمت إضافة أزرق النيلة — انتظر النتيجة...';
+    document.getElementById('result-text').textContent = 'في انتظار التفاعل...';
+    // Add 3 drops in a slight spread for realism
+    for (let i = 0; i < 3; i++) {
+        indigoDrops.push({
+            x: anoCX + (Math.random()-0.5)*14,
+            y: H*0.06,
+            vy: 3.2 + Math.random()*1.2,
+            size: 4 + Math.random()*3,
+            done: false,
+            splashed: false
+        });
+    }
+});
+
+function loop() {
+    scene1.frame();
+    scene2.frame();
+    requestAnimationFrame(loop);
+}
+
+onSolutionChange('nacl');
+loop();
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js');
+  });
+}
+</script>
+</body>
+</html>
