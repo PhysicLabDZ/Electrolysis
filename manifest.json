@@ -1,6 +1,6 @@
 {
   "name": "PhysicLab - محاكاة التحليل الكهربائي",
-  "short_name": "PhysicLab",
+  "short_name": "التحليل الكهربائي",
   "description": "محاكاة تفاعلية للتحليل الكهربائي للمرحلة المتوسطة",
   "start_url": "/Electrolysis/",
   "display": "standalone",
